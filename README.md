@@ -6,13 +6,15 @@
 
 ![render image of the PCB](/images/pcb_render.jpg)
 
+
 ## Extension to add the CPAP function without giving up the Neopixel port.
 The WS7040 "CPAP cooling controller" requires a positive 5V switching signal to control the speed of the motor. The workaround on some boards like the BTT Octopus is to use the pin for Neopixel (PB0 or ​​PB10).
 But if you don't want to do without the fancy Neopixel blinky thing, you can add this little board on the EXT1 port. In most cases we don't need EXP1 because we have a display connected to the SBC (Raspberry Pi etc.).
 
+
 ### Pin mapping
-I choose the ports for ```BEEPER``` and ```LCD_RS```.
-On the Octopus Pro V1.1 this corresponds to pins PE8 and PE10.
+I choose the ports for **BEEPER** and **LCD_RS**.
+On the Octopus Pro V1.1 this corresponds to pins `PE8` and `PE10`.
 According to the data sheet of the used STM, they can PWM, and that's exactly what we need.
 
 The beeper is additional. Some extra informations via speaker are helpful. :smile:  
@@ -24,15 +26,15 @@ Do you miss one here? Please let me know!
 
 | Board (Version)  | Description | Mapping new | PIN
 | ---              | ---         | ---         | :---: |
-| BTT Octopus Pro V1.1 | STM32H723ZET6|            |       |
-|                  | BEEPER      | BUZZER      | PE8   |
-|                  | LCD_RS      | CPAP Control| PE10  |
-| BTT Octopus V1.0     | STM32F446ZET6|            |       |
-|                  | BEEPER      | BUZZER      | PE8   |
-|                  | LCD_RS      | CPAP Control| PE10  |
-| Fystec Cheetah V3.0     | STM32F446RCT6 |            |       |
-|                  | BEEP        | BUZZER      | PB10   |
-|                  | LCD_RS      | CPAP Control| PB12  |
+| BTT Octopus Pro V1.1 | *STM32H723ZET6*|            |       |
+|                  | BEEPER      | BUZZER      | `PE8`  |
+|                  | LCD_RS      | CPAP Control| `PE10`  |
+| BTT Octopus V1.0     | *STM32F446ZET6*|            |       |
+|                  | BEEPER      | BUZZER      | `PE8`   |
+|                  | LCD_RS      | CPAP Control| `PE10`  |
+| Fystec Cheetah V3.0     | *STM32F446RCT6* |            |       |
+|                  | BEEP        | BUZZER      | `PB10`   |
+|                  | LCD_RS      | CPAP Control| `PB12`  |
 
 
 ## Parts
@@ -50,6 +52,7 @@ Do you miss one here? Please let me know!
 
 
 U1 buffer gate is the same level shifter as the one in the Octopus Board. The IDC Connector J1 is hard to find. Sometimes it's available at aliexpress, or you have a friendly Guy, he can order at digikey.
+
 
 ### Place the addon into your board
 ![animation](/images/animation.gif)
