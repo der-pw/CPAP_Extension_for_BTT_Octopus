@@ -13,7 +13,7 @@ But if you don't want to do without the fancy Neopixel blinky thing, you can add
 
 
 ### Pin mapping
-I choose the ports for **BEEPER** and **LCD_RS**.
+I choosed the ports for **BEEPER** and **LCD_RS**.
 On the Octopus Pro V1.1 this corresponds to pins `PE8` and `PE10`.
 According to the data sheet of the used STM, they can PWM, and that's exactly what we need.
 
@@ -55,4 +55,11 @@ U1 buffer gate is the same level shifter as the one in the Octopus Board. The ID
 
 
 ### Place the addon into your board
-![animation](/images/animation.gif)
+Here you can see where the addon is located.  
+
+![place in board](/images/place_in_board.jpg)
+
+### Resistor for the buzzer
+if the buzzer is too loud, you can open the jumper on the underside and solder in a series resistor at this point.  
+
+![animation](/images/cut_jumper.jpg)
