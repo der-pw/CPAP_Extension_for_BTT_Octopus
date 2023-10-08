@@ -73,7 +73,5 @@ For example, you can use `M300 S440 P1000` to play a tone at 440 Hz for 1 second
 ### Resistor for the buzzer
 if the buzzer is too loud, you can open the jumper on the underside and solder in a series resistor at this point.  
 
-![animation](/images/cut_jumper.jpg)
-
 
 Gerbers are made with [Fabrication Toolkit](https://github.com/bennymeg/JLC-Plugin-for-KiCad)!
