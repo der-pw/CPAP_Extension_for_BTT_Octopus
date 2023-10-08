@@ -1,10 +1,7 @@
 ﻿Designator,Footprint,Quantity,Value,LCSC Part #
-BZ1,Buzzer_12x9.5RM7.6,1,Buzzer,C360618
-J1,PinSocket_2x05_P2.54mm_Vertical,1,Conn_02x05_Odd_Even,
-J2,JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical,1,Conn_01x02_Pin,
-JP1,SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,1,Jumper_2_Bridged,
 Q1,SOT-23,1,AO3400A,C20917
-R1,0805,1,4.7k,C115310
-R2,0805,1,330,C26010
+R1,0805,1,4.7k,C17673
+R2,0805,1,300R,C17617
 R3,0805,1,10k,C17414
-U1,SOT-353_SC-70-5_Handsoldering,1,74LVC1G125,C7394017
+R4,0805,1,10R,C17415
+U1,SOT-23-5_HandSoldering,1,74LVC1G125,C23654
