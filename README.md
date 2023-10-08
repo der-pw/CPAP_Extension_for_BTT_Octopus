@@ -29,7 +29,7 @@ Do you miss one here? Please let me know!
 | BTT Octopus V1.0     | *STM32F446ZET6*|            |       |
 |                  | BEEPER      | BUZZER      | `PE8`   |
 |                  | LCD_RS      | CPAP Control| `PE10`  |
-| Fystec Cheetah V3.0 (EXP3)    | *STM32F446RCT6* |            |       |
+| Fysetc Cheetah V3.0 (EXP3)    | *STM32F446RCT6* |            |       |
 |                  | BEEP        | BUZZER      | `PB10`   |
 |                  | LCD_RS      | CPAP Control| `PB14`  |
 
@@ -79,15 +79,13 @@ I have added a resistor in series to the buzzer with 10Ω to reduce resonances i
 I set the cycle time to 0.00004 (25 kHz.) This is how I got the best results and can set the power to 6%.
 
 ```
-[fan_generic CPAP-TEST]
+[fan]
 pin: PE10
 max_power: 1.0
 kick_start_time: 0.1
 cycle_time: 0.00004 #25kHz
 hardware_pwm: False
 off_below: 0.06
-heater: extruder
-fan_speed: 1.0 
 ```
 --- 
 
