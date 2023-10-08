@@ -14,7 +14,7 @@ I choosed the ports for **BEEPER** and **LCD_RS**.
 On the Octopus Pro V1.1 this corresponds to pins `PE8` and `PE10`.
 According to the data sheet of the used STM, they can PWM, and that's exactly what we need.
 
-![schemativ of EXP1](/images/exp1_schematic.jpg)  
+![schematic of EXP1](/images/exp1_schematic.jpg)  
 
 The beeper is additional. Some extra informations via speaker are helpful. :smile:  
 
@@ -63,9 +63,8 @@ Here you can see where the addon is located on the BTT Octopus Pro.
 ![wiring](/images/wiring.jpg)
 
 ### Additional buzzer function
-
-Please check the configuration file in Klipper folder.
-You can copy the *macro_buzzer.cfg* into your configuration folder and include it in your *printer.cfg* with `[include Macro_buzzer.cfg]`.
+Please check the configuration file in *klipper* folder.
+You can copy the *macro_buzzer.cfg* into your configuration folder and include it in your *printer.cfg* with `[include macro_buzzer.cfg]`.
 Enable the correct pin depending on your board.
 Now you will get some tones about `M300`.
 For example, you can use `M300 S440 P1000` to play a tone at 440 Hz for 1 second. In *macro_buzzer.cfg* you will find some macros that play small melodies.
@@ -76,7 +75,7 @@ I have added a resistor in series to the buzzer with 10Ω to reduce resonances i
 ![R4 Resistor](/images/R4_resistor.jpg)
 
 ### Klipper config
-I set the cycle time to 0.00004 (25 kHz.) This is how I got the best results and can set the power to 6%.
+I set the cycle time to 0.00004 (25 kHz.) This is how I got the best results and can set the power down to 6%.
 
 ```
 [fan]
@@ -90,7 +89,6 @@ off_below: 0.06
 --- 
 
 ### FAQ
-
 *Why not to connect to one of the many FAN Ports?*  
 The Fan Ports are controlled by a N-channel MOSFET. You just can controll the negative side with PWM but you need the positive side, because the VSR Input has commen GND.
 
@@ -98,7 +96,7 @@ The Fan Ports are controlled by a N-channel MOSFET. You just can controll the ne
 It's the same like at some pins of your Octopus Board. They just have a logic level of 3.3V. The VSR Input of the CPAP Controller needs 5V for 100% cooling power. You lose around 30%.
 
 *Does this also work with other boards?*  
-So far I have only tested it with the Octopus, Octopus Pro and the Fysetc Cheetah 3.0. In principle, it should work with many boards that offer a slot for a 12864 display. However, you then have to check whether a pin with a PWM signal arrives at the positions I used.
+So far I have only tested it with the Octopus, Octopus Pro and the Fysetc Cheetah 3.0. It should work with many boards that offer a slot for a 12864 display. However, you then have to check whether a pin with a PWM signal arrives at the positions I used.
 
 ### This is Open Source Hardware
 
