@@ -48,7 +48,7 @@ Do you miss one here? Please let me know!
 | BZ1      | Buzzer (passive) | 12x8.5mm  6.6mm Pitch | https://www.amazon.de/dp/B0179I6LIK 
 
 
-All SMD parts are specified in the production file. I have no experience with assembling THT parts via the SMT service, so I always solder them by hand. In this case this applies to the buzzer and the JST connector.
+All SMD parts are specified in the production file. I have no experience with assembling THT parts via the SMT service, so I always solder them by hand. In this case this applies to the buzzer, the JST connector and the IDC connector.
 
 U1 buffer gate is the same level shifter as the one in the Octopus Board. The IDC Connector J1 is hard to find. Sometimes it's available at aliexpress, or you have a friendly Guy, he can order at digikey.
 A 2x5 (2.54mm) pin header will also work, but please be aware to check the direction if you put it in your board.
@@ -86,7 +86,6 @@ cycle_time: 0.00004 #25kHz
 hardware_pwm: False
 off_below: 0.06
 ```
---- 
 
 ### FAQ
 *Why not to connect to one of the many FAN Ports?*  
@@ -98,9 +97,11 @@ It's the same like at some pins of your Octopus Board. They just have a logic le
 *Does this also work with other boards?*  
 So far I have only tested it with the Octopus, Octopus Pro and the Fysetc Cheetah 3.0. It should work with many boards that offer a slot for a 12864 display. However, you then have to check whether a pin with a PWM signal arrives at the positions I used.
 
+--- 
+
 ### This is Open Source Hardware
 
 ![open source hardware](/images/oshw-logo-200-px.webp)  
-Feel free to create your own modifiactions and versions.
+Feel free to create your own modifiactions and versions!
 
-Gerbers are made with [Fabrication Toolkit](https://github.com/bennymeg/JLC-Plugin-for-KiCad)!
+Gerbers are made with [Fabrication Toolkit](https://github.com/bennymeg/JLC-Plugin-for-KiCad).
