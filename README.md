@@ -89,6 +89,14 @@ off_below: 0.06
 ```
 --- 
 
+### FAQ
+
+*Why not to connect to one of the many FAN Ports?*  
+The Fan Ports are controlled by a N-channel MOSFET. You just can controll the negative side with PWM but you need the positive side, because the VSR Input has commen GND.
+
+*Why not to connect to the GPIO of my Raspberry Pi?*  
+It's the same like at some pins of your Octopus Board. They just have a logic level of 3.3V. The VSR Input of the CPAP Controller needs 5V for 100% cooling power. You loose around 30%.
+
 ### This is Open Source Hardware
 
 ![open source hardware](/images/oshw-logo-200-px.webp)  
