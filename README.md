@@ -95,7 +95,10 @@ off_below: 0.06
 The Fan Ports are controlled by a N-channel MOSFET. You just can controll the negative side with PWM but you need the positive side, because the VSR Input has commen GND.
 
 *Why not to connect to the GPIO of my Raspberry Pi?*  
-It's the same like at some pins of your Octopus Board. They just have a logic level of 3.3V. The VSR Input of the CPAP Controller needs 5V for 100% cooling power. You loose around 30%.
+It's the same like at some pins of your Octopus Board. They just have a logic level of 3.3V. The VSR Input of the CPAP Controller needs 5V for 100% cooling power. You lose around 30%.
+
+*Does this also work with other boards?*  
+So far I have only tested it with the Octopus, Octopus Pro and the Fysetc Cheetah 3.0. In principle, it should work with many boards that offer a slot for a 12864 display. However, you then have to check whether a pin with a PWM signal arrives at the positions I used.
 
 ### This is Open Source Hardware
 
