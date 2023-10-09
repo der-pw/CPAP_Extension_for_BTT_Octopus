@@ -34,7 +34,7 @@ Do you miss one here? Please let me know!
 |                  | LCD_RS      | CPAP Control| `PB14`  |
 
 
-## Parts
+### Parts
 | Position | Description | Value      | Information
 | ---      | ---         | ---        | ---
 | R1       | Resistor    | 4.7k       | SMD 0805
@@ -58,21 +58,11 @@ Here you can see where the addon is located on the BTT Octopus Pro.
 
 ![place in board](/images/place_in_board.jpg)
 
-### Connection to Controller Board
+### Connection to controller board
+Connect the + pin from the expansion board to the VSR pin from the controller.
+In addition, the - pin with the GND pin, even if it is not absolutely necessary.
 
 ![wiring](/images/wiring.jpg)
-
-### Additional buzzer function
-Please check the configuration file in *klipper* folder.
-You can copy the *macro_buzzer.cfg* into your configuration folder and include it in your *printer.cfg* with `[include macro_buzzer.cfg]`.
-Enable the correct pin depending on your board.
-Now you will get some tones about `M300`.
-For example, you can use `M300 S440 P1000` to play a tone at 440 Hz for 1 second. In *macro_buzzer.cfg* you will find some macros that play small melodies.
-
-### Resistor for the buzzer
-I have added a resistor in series to the buzzer with 10Ω to reduce resonances in some fequencies. If you need it louder or quieter, you can chance R4 with other values.
-
-![R4 Resistor](/images/R4_resistor.jpg)
 
 ### Klipper config
 I set the cycle time to 0.00004 (25 kHz.) This is how I got the best results and can set the power down to 6%.
@@ -87,12 +77,24 @@ hardware_pwm: False
 off_below: 0.06
 ```
 
+### Additional buzzer function
+Please check the configuration file in *klipper* folder.
+You can copy the *macro_buzzer.cfg* into your configuration folder and include it in your *printer.cfg* with `[include macro_buzzer.cfg]`.
+Enable the correct pin depending on your board.
+Now you will get some tones about `M300`.
+For example, you can use `M300 S440 P1000` to play a tone at 440 Hz for 1 second. In *macro_buzzer.cfg* you will find some macros that play small melodies.
+
+### Resistor for the buzzer
+I have added a resistor in series to the buzzer with 10Ω to reduce resonances in some fequencies. If you need it louder or quieter, you can chance R4 with other values.
+
+![R4 Resistor](/images/R4_resistor.jpg)
+
 ### FAQ
-*Why not to connect to one of the many FAN Ports?*  
-The Fan Ports are controlled by a N-channel MOSFET. You just can controll the negative side with PWM but you need the positive side, because the VSR Input has commen GND.
+*Why not to connect to one of the many FAN ports?*  
+The fan ports are controlled by a N-channel MOSFET. You just can controll the negative side with PWM but you need the positive side, because the VSR input has commen GND.
 
 *Why not to connect to the GPIO of my Raspberry Pi?*  
-It's the same like at some pins of your Octopus Board. They just have a logic level of 3.3V. The VSR Input of the CPAP Controller needs 5V for 100% cooling power. You lose around 30%.
+It's the same like at some pins of your Octopus Board. They just have a logic level of 3.3V. The VSR Input of the CPAP controller needs 5V for 100% cooling power. You lose around 30%.
 
 *Does this also work with other boards?*  
 So far I have only tested it with the Octopus, Octopus Pro and the Fysetc Cheetah 3.0. It should work with many boards that offer a slot for a 12864 display. However, you then have to check whether a pin with a PWM signal arrives at the positions I used.
