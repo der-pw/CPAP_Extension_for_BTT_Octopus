@@ -5,8 +5,8 @@
 
 
 ## Extension to add the CPAP function without giving up the Neopixel port.
-The WS7040 "CPAP cooling controller" requires a positive 5V switching signal to control the speed of the motor. The workaround on some boards like the BTT Octopus is to use the pin for Neopixel (PB0 or ​​PB10).
-But if you don't want to do without the fancy Neopixel blinky thing, you can add this little board on the EXP1 port. In most cases we don't need EXP1 because we have a display connected to the SBC (Raspberry Pi etc.).
+The WS7040 “CPAP Cooling Controller” requires a positive 5V switching signal to control the speed of the motor. For some boards like the BTT Octopus, the workaround is to use the pin for Neopixel (PB0 or ​​PB10).
+But if you don't want to loose out the fancy Neopixel Blinky thing, you can attach this little board to the EXP1 port. In most cases we don't need EXP1 because we have a display connected to the SBC (Raspberry Pi, etc.).
 
 
 ### Pin mapping
@@ -65,7 +65,7 @@ In addition, the - pin with the GND pin, even if it is not absolutely necessary.
 ![wiring](/images/wiring.jpg)
 
 ### Klipper config
-I set the cycle time to 0.00004 (25 kHz.) This is how I got the best results and can set the power down to 6%.
+I've set the cycle time to 0.00004 (25 kHz.) This is how I got the best results and can set the power down to 6%.
 
 ```
 [fan]
@@ -82,7 +82,7 @@ Please check the configuration file in *klipper* folder.
 You can copy the *macro_buzzer.cfg* into your configuration folder and include it in your *printer.cfg* with `[include macro_buzzer.cfg]`.
 Enable the correct pin depending on your board.
 Now you will get some tones about `M300`.
-For example, you can use `M300 S440 P1000` to play a tone at 440 Hz for 1 second. In *macro_buzzer.cfg* you will find some macros that play small melodies.
+For example, you can use `M300 S440 P1000` to play a tone at 440 Hz for 1 second. In *macro_buzzer.cfg* you'll find some macros that play small melodies.
 
 ### Resistor for the buzzer
 I have added a resistor in series to the buzzer with 10Ω to reduce resonances in some fequencies. If you need it louder or quieter, you can chance R4 with other values.
@@ -91,7 +91,7 @@ I have added a resistor in series to the buzzer with 10Ω to reduce resonances i
 
 ### FAQ
 *Why not to connect to one of the many FAN ports?*  
-The fan ports are controlled by a N-channel MOSFET. You just can controll the negative side with PWM but you need the positive side, because the VSR input has commen GND.
+The fan ports are controlled by a N-channel MOSFET. You just can controll the negative side with PWM but you need the positive side, because the VSR input has common GND.
 
 *Why not to connect to the GPIO of my Raspberry Pi?*  
 It's the same like at some pins of your Octopus Board. They just have a logic level of 3.3V. The VSR Input of the CPAP controller needs 5V for 100% cooling power. You lose around 30%.
