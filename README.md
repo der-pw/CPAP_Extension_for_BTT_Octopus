@@ -59,8 +59,8 @@ Here you can see where the addon is located on the BTT Octopus Pro.
 ![place in board](/images/place_in_board.jpg)
 
 ### Connection to controller board
-Connect the + pin from the expansion board to the VSR pin from the controller.
-In addition, the - pin with the GND pin, even if it is not absolutely necessary.
+Connect the + pin from the expansion board to the VSR pin from the controller (Pin 2).
+In addition, the - pin with the GND pin (Pin 3), even if it is not absolutely necessary.
 
 ![wiring](/images/wiring.jpg)
 
